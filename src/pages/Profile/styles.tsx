@@ -3,14 +3,13 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f7f7f7",
+    backgroundColor: "#fff",
   },
   profile: {
-    paddingTop: 20,
-    justifyContent: "center",
+    paddingTop: 200,
     alignItems: "center",
   },
-  name: { fontSize: 28 },
+  name: { fontSize: 28, marginVertical: 20 },
   email: { fontSize: 28 },
 });
 

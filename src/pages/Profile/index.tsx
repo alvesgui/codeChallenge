@@ -9,8 +9,8 @@ function Profile() {
       <Header title="Perfil" />
       <View style={styles.profile}>
         <FontAwesome name="user-circle" size={50} />
-        <Text style={styles.name}>Guilherme</Text>
-        <Text style={styles.email}>gui@gmail.com</Text>
+        <Text style={styles.name}>Nome: Guilherme</Text>
+        <Text style={styles.email}>Email: gui@gmail.com</Text>
       </View>
     </View>
   );

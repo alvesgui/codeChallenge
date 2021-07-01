@@ -18,7 +18,8 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   padding-bottom: 30px;
-  width: 90%;
+  width: 100%;
+  background-color: white;
 `;
 
 export const Input = styled.TextInput`
@@ -28,5 +29,5 @@ export const Input = styled.TextInput`
   color: #000;
   font-size: 20px;
   border-radius: 9px;
-  width: 90%;
+  width: 80%;
 `;

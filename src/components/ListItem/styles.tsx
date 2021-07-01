@@ -2,17 +2,18 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
+    height: 100,
     alignItems: "center",
     backgroundColor: "#fff",
   },
   subContainer: {
-    width: "80%",
+    width: "90%",
+    height: 80,
+    paddingVertical: 20,
     marginTop: 1,
     backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: "#e6e6f0",
-    borderRadius: 8,
-    marginBottom: 16,
+    borderBottomWidth: 0.8,
+    borderBottomColor: "#d3d3d3",
     overflow: "hidden",
     flexDirection: "row",
     justifyContent: "space-between",

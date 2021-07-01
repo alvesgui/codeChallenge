@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 import { RectButton } from "react-native-gesture-handler";
 import { KeyboardView, Title, Container, Input } from "./styles";
-import firebase from "../../../firebaseconection";
+// import firebase from "../../../firebaseconection";
 
 interface User {
   name?: string;
@@ -14,11 +14,20 @@ interface User {
 
 function Signup() {
   const { navigate } = useNavigation();
+
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleNavigateToHomeTabs() {
-    navigate("HomeTabs");
+  function handleCadastro() {
+    // firebase
+    //   .auth()
+    //   .createUserWithEmailAndPassword(email, password)
+    //   .then(() => {
+    //     navigate("Login");
+    //   })
+    //   .catch(() => {});
+    navigate("Login");
   }
   function handleNavigateToLogin() {
     navigate("Login");
@@ -28,21 +37,40 @@ function Signup() {
       <Container>
         <FontAwesome name="user-plus" size={50} />
         <Title>Cadastra-se</Title>
-        <Input placeholder={"Nome"} returnKeyType={"next"} />
-        <Input keyboardType={"email-address"} placeholder={"Email"} />
-        <Input secureTextEntry placeholder={"senha"} maxLength={6} />
-        <RectButton onPress={handleNavigateToHomeTabs} style={style.button}>
-          <Text style={style.buttonText}>Cadastrar</Text>
+        <Input
+          placeholder={"Nome"}
+          returnKeyType={"next"}
+          value={name}
+          onChangeText={(text) => setName(text)}
+        />
+        <Input
+          keyboardType={"email-address"}
+          placeholder={"Email"}
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+        />
+        <Input
+          secureTextEntry
+          placeholder={"senha"}
+          maxLength={6}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
+        <RectButton onPress={handleCadastro} style={styles.button}>
+          <Text style={styles.buttonText}>Cadastrar</Text>
         </RectButton>
-        <RectButton onPress={handleNavigateToLogin} style={style.button}>
-          <Text style={style.buttonText}>Entrar</Text>
+
+        <Text style={styles.text}>Faça login </Text>
+
+        <RectButton onPress={handleNavigateToLogin} style={styles.button}>
+          <Text style={styles.buttonText}>Entrar</Text>
         </RectButton>
       </Container>
     </KeyboardView>
   );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   button: {
     backgroundColor: "#000",
     borderRadius: 9,
@@ -56,6 +84,9 @@ const style = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 16,
+  },
+  text: {
+    marginTop: 20,
   },
 });
 

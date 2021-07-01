@@ -14,13 +14,6 @@ function ItemList() {
         <ListItem />
         <ListItem />
         <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-        <ListItem />
-
-        <ListItem />
       </ScrollView>
     </View>
   );

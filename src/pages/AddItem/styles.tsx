@@ -1,15 +1,11 @@
 import { StyleSheet } from "react-native";
-import styled from "styled-components/native";
-
-export const KeyboardView = styled.KeyboardAvoidingView`
-  align-items: center;
-`;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f7f7f7",
+    backgroundColor: "#fff",
   },
+  containerAdd: { alignItems: "center" },
   title: {
     color: "#000",
     fontSize: 32,
@@ -28,8 +24,8 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#fff",
     borderWidth: 1.4,
-    borderColor: "#cbcbcb",
-    borderRadius: 20,
+    borderColor: "#030303",
+    borderRadius: 9,
     height: 56,
     paddingVertical: 18,
     paddingHorizontal: 24,
@@ -50,6 +46,16 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: "center",
     fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
+  buttonImage: {
+    backgroundColor: "#030303",
+    borderRadius: 9,
+    width: "55%",
+    padding: 20,
+    alignItems: "center",
+    fontSize: 15,
     fontWeight: "bold",
     marginTop: 10,
   },

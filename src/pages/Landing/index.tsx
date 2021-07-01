@@ -16,10 +16,14 @@ function Landing() {
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>UP</Text>
+      <View style={styles.logoContainer}>
+        <Text style={styles.logo}>UP</Text>
+      </View>
 
-      <Text style={styles.title}>Partner UP</Text>
-      <Text style={styles.subtitle}>Fintech + A.I.</Text>
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>Partner UP</Text>
+        <Text style={styles.subtitle}>Fintech + A.I.</Text>
+      </View>
 
       <View style={styles.buttonsContainer}>
         <RectButton onPress={handleNavigateToLogin} style={styles.button}>
@@ -27,7 +31,7 @@ function Landing() {
         </RectButton>
 
         <RectButton onPress={handleNavigateToSignup} style={styles.button}>
-          <Text style={styles.buttonText}>Signup</Text>
+          <Text style={styles.buttonText}>Cadastrar</Text>
         </RectButton>
       </View>
     </View>

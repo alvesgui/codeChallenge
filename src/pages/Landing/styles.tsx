@@ -5,9 +5,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f7f7f7",
     justifyContent: "center",
-    alignItems: "center",
     padding: 40,
   },
+
+  logoContainer: {
+    alignItems: "center",
+  },
+
   logo: {
     backgroundColor: "#f7f7f7",
     alignItems: "center",
@@ -18,7 +22,8 @@ const styles = StyleSheet.create({
     fontFamily: "LondrinaShadow_400Regular",
   },
   textContainer: {
-    marginBottom: 20,
+    paddingVertical: 20,
+    alignItems: "center",
   },
 
   title: {
@@ -34,23 +39,22 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     flexDirection: "row",
-    marginTop: 40,
     justifyContent: "space-between",
+    paddingTop: 100,
   },
   button: {
-    height: 150,
-    width: "40%",
-    backgroundColor: "#f7f7f7",
-    borderRadius: 8,
-    borderWidth: 10,
-    borderColor: "#000",
-    padding: 24,
-    justifyContent: "space-between",
+    backgroundColor: "#000",
+    borderRadius: 9,
+    width: 140,
+    padding: 20,
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 10,
   },
-
   buttonText: {
-    color: "#000",
-    fontSize: 18,
+    color: "#fff",
+    fontSize: 16,
   },
 });
 
