@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=15C3D6&labelColor=000000" alt="ReactNative Firebase" />
+ <img src="https://img.shields.io/static/v1?label=ReactNative&message=Firebase&color=FFA500&labelColor=000000" alt="ReactNative Firebase" />
 
 </p>
 
