@@ -1,6 +1,6 @@
 <p align="center">
   <img src= "/assets/icon.png"
-  width="700" heigth="700"><br>
+  width="701" heigth="701"><br>
 </p>
 
 ## ✔️ Description
@@ -8,6 +8,7 @@
 Code Challenge <b> Partner Up <b>. This mobile application was developed with the goal of testing knowledge regarding [React Native](https://reactnative.dev/) +
 [Firebase](https://firebase.google.com/?hl=pt), In the authentication part as the storage part.
 
+<br>
 ## 🚀 Technologies
 
 The projectwas developed with the technologies below:
@@ -18,15 +19,17 @@ The projectwas developed with the technologies below:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Yarn](https://yarnpkg.com/)
 
+<br>
 ## 💻 The project
 
 <p float="center">
-  <img src="/assets/landing.png" width="250" hspace="20" /> 
-  <img src="/assets/login.png" width="250" hspace="20"/>
-  <img src="/assets/create.png" width="250" hspace="20"/> 
-  <img src="/assets/home.png" width="250"hspace="20"/>
+  <img src="/assets/landing.png" width="200" hspace="20" /> 
+  <img src="/assets/login.png" width="200" hspace="20"/>
+  <img src="/assets/create.png" width="200" hspace="20"/> 
+  <img src="/assets/home.png" width="200"hspace="20"/>
 </p>
 
+<br>
 ## 🔖 Running the project
 
 to install the necessary dependencies
