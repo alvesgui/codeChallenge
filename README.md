@@ -14,7 +14,7 @@ Code Challenge <b> Partner Up <b>. This mobile application was developed with th
 The projectwas developed with the technologies below:
 
 - [React Native](https://facebook.github.io/react-native/)
-- [Firebase] (https://firebase.google.com/?hl=pt)
+- [Firebase](https://firebase.google.com/?hl=pt)
 - [Expo](https://expo.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 
