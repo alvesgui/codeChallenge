@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 import { RectButton } from "react-native-gesture-handler";
 import { KeyboardView, Title, Container, Input } from "./styles";
-// import firebase from "../../../firebaseconection";
+import auth from "@react-native-firebase/auth";
 
 interface User {
   name?: string;
@@ -15,34 +15,44 @@ interface User {
 function Signup() {
   const { navigate } = useNavigation();
 
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleCadastro() {
-    // firebase
-    //   .auth()
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .then(() => {
-    //     navigate("Login");
-    //   })
-    //   .catch(() => {});
-    navigate("Login");
+  function handleCreateUser() {
+    if (email && password) {
+      auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("User created successfully!");
+          navigate("Login");
+          setEmail("");
+          setPassword("");
+        })
+        .catch((error) => {
+          if (error.code === "auth/email-already-in-use") {
+            alert("Email already in use!");
+          }
+
+          if (error.code === "auth/invalid-email") {
+            alert("Invalid email");
+          }
+        });
+    } else {
+      alert("Fill in all fields!");
+    }
   }
+
   function handleNavigateToLogin() {
     navigate("Login");
+    setEmail("");
+    setPassword("");
   }
   return (
     <KeyboardView>
       <Container>
         <FontAwesome name="user-plus" size={50} />
-        <Title>Cadastra-se</Title>
-        <Input
-          placeholder={"Nome"}
-          returnKeyType={"next"}
-          value={name}
-          onChangeText={(text) => setName(text)}
-        />
+        <Title>Sign Up</Title>
+
         <Input
           keyboardType={"email-address"}
           placeholder={"Email"}
@@ -51,20 +61,18 @@ function Signup() {
         />
         <Input
           secureTextEntry
-          placeholder={"senha"}
+          placeholder={"password"}
           maxLength={6}
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
-        <RectButton onPress={handleCadastro} style={styles.button}>
-          <Text style={styles.buttonText}>Cadastrar</Text>
+        <RectButton onPress={handleCreateUser} style={styles.button}>
+          <Text style={styles.buttonText}>Create</Text>
         </RectButton>
 
-        <Text style={styles.text}>Faça login </Text>
-
-        <RectButton onPress={handleNavigateToLogin} style={styles.button}>
-          <Text style={styles.buttonText}>Entrar</Text>
-        </RectButton>
+        <Text onPress={handleNavigateToLogin} style={styles.text}>
+          Already have registration? Sign In
+        </Text>
       </Container>
     </KeyboardView>
   );
@@ -86,7 +94,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   text: {
-    marginTop: 20,
+    paddingTop: 60,
+    color: "#000",
+    fontSize: 16,
   },
 });
 

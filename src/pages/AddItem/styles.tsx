@@ -9,9 +9,8 @@ const styles = StyleSheet.create({
   title: {
     color: "#000",
     fontSize: 32,
-    marginBottom: 48,
+    marginBottom: 15,
     paddingBottom: 16,
-    marginTop: 10,
     borderBottomWidth: 0.8,
     borderBottomColor: "#d3d3d3",
   },
@@ -19,9 +18,24 @@ const styles = StyleSheet.create({
   label: {
     color: "#030303",
     marginBottom: 8,
+    fontSize: 15,
+    fontWeight: "bold",
   },
 
   input: {
+    backgroundColor: "#fff",
+    borderWidth: 1.4,
+    borderColor: "#030303",
+    borderRadius: 9,
+    height: 56,
+    paddingVertical: 18,
+    paddingHorizontal: 24,
+    marginBottom: 16,
+
+    width: 300,
+  },
+
+  inputMultiline: {
     backgroundColor: "#fff",
     borderWidth: 1.4,
     borderColor: "#030303",
@@ -47,7 +61,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     fontSize: 20,
     fontWeight: "bold",
-    marginTop: 10,
+    marginTop: 40,
   },
   buttonImage: {
     backgroundColor: "#030303",
@@ -62,6 +76,17 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 16,
+  },
+
+  uploadedImageContainer: { alignItems: "center" },
+
+  uploadedImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 9,
+  },
+  itemList: {
+    marginTop: 10,
   },
 });
 

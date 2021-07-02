@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Image, ScrollView } from "react-native";
 import Header from "../../components/Header";
 import { RectButton } from "react-native-gesture-handler";
+import { FontAwesome } from "@expo/vector-icons";
+
 import { useNavigation } from "@react-navigation/native";
 
 import Constants from "expo-constants";
 import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
+// import * as ImagePicker from "react-native-image-picker";
 
 import styles from "./styles";
 
@@ -15,65 +18,74 @@ function AddList() {
 
   const [itemName, setItemName] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState();
-
-  async function imagePicker() {
-    if (Constants.platform?.ios) {
-      const { status } = await Permissions.askAsync(Permissions.CAMERA);
-
-      if (status !== "granted") {
-        alert("Precisamos da permissão");
-        return;
-      }
-    }
-    const data = await ImagePicker.launchImageLibraryAsync({});
-
-    console.log(data);
-  }
+  const [image, setImage] = useState("");
 
   function handleAddItem() {
     console.log({ itemName, description, image });
+    navigate("HomeTabs");
+    setItemName("");
+    setDescription("");
+    setImage("");
   }
 
-  // async function uploadImage() {
-  //   const data = new FormData();
+  async function handleAddImage() {
+    const { status } = await ImagePicker.requestCameraPermissionsAsync();
 
-  //   data.append('image', {
+    if (status !== "granted") {
+      alert("We need access to your photos... .");
+      return;
+    }
 
-  //   })
-  // }
+    const result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      quality: 1,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+    });
+    if (result.cancelled) {
+      return;
+    }
 
+    const { uri: image } = result;
+
+    setImage(image);
+  }
   return (
-    <View style={styles.container}>
-      <Header title="Adicionar item" />
-      <View style={styles.containerAdd}>
-        <Text style={styles.title}>Dados</Text>
-        <View style={styles.profile}>
-          <Text style={styles.label}>Nome</Text>
-          <TextInput
-            style={styles.input}
-            value={itemName}
-            onChangeText={(text) => setItemName(text)}
-          />
+    <ScrollView style={styles.itemList}>
+      <View style={styles.container}>
+        <Header title="Create item" />
+        <View style={styles.containerAdd}>
+          <Text style={styles.title}>Data</Text>
+          <View style={styles.profile}>
+            <Text style={styles.label}>Name</Text>
+            <TextInput
+              style={styles.input}
+              value={itemName}
+              onChangeText={(text) => setItemName(text)}
+            />
 
-          <Text style={styles.label}>Descrição</Text>
-          <TextInput
-            style={styles.input}
-            value={description}
-            onChangeText={(text) => setDescription(text)}
-          />
+            <Text style={styles.label}>Description</Text>
+            <TextInput
+              style={[styles.input]}
+              value={description}
+              onChangeText={(text) => setDescription(text)}
+            />
+            <Text style={styles.label}>Image</Text>
+            <View style={styles.uploadedImageContainer}>
+              <Image source={{ uri: image }} style={styles.uploadedImage} />
+            </View>
 
-          <View style={styles.containerButton}>
-            <RectButton onPress={imagePicker} style={styles.buttonImage}>
-              <Text style={styles.buttonText}>Escolher Imagem</Text>
-            </RectButton>
-            <RectButton onPress={handleAddItem} style={styles.button}>
-              <Text style={styles.buttonText}>Salvar</Text>
-            </RectButton>
+            <View style={styles.containerButton}>
+              <RectButton onPress={handleAddImage} style={styles.buttonImage}>
+                <FontAwesome name="image" size={20} color={"#fff"} />
+              </RectButton>
+              <RectButton onPress={handleAddItem} style={styles.button}>
+                <Text style={styles.buttonText}>Save</Text>
+              </RectButton>
+            </View>
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

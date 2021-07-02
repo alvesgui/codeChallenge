@@ -4,7 +4,7 @@ import { RectButton } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import firebase from "react-native-firebase";
+import auth from "@react-native-firebase/auth";
 
 import { KeyboardView, Title, Container, Input } from "./styles";
 import { useState } from "react";
@@ -16,16 +16,26 @@ function Login() {
   const [password, setPassword] = useState("");
 
   function handleNavigateToHomeTabs() {
-    // firebase
-    //   .auth()
-    //   .signInWithEmailAndPassword(email, password)
-    //   .then(() => {
-    //     navigate("HomeTabs");
-    //   })
-    //   .catch(() => {
-    //     console.error();
-    //   });
-    navigate("HomeTabs");
+    if (email && password) {
+      auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+          navigate("HomeTabs");
+          setEmail("");
+          setPassword("");
+        })
+        .catch((error) => {
+          if (
+            error.code === "auth/user-nout-found" ||
+            error.code === "auth/wrong-password" ||
+            error.code === "auth/invalid-email"
+          ) {
+            alert("Wrong email or password. Try again!");
+          }
+        });
+    } else {
+      alert("Fill in all fields!");
+    }
   }
   function handleNavigateToSignup() {
     navigate("Signup");
@@ -46,20 +56,19 @@ function Login() {
 
         <Input
           secureTextEntry
-          placeholder={"senha"}
+          placeholder={"password"}
+          maxLength={6}
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
 
         <RectButton onPress={handleNavigateToHomeTabs} style={styles.button}>
-          <Text style={styles.buttonText}>Entrar</Text>
+          <Text style={styles.buttonText}>Sign In</Text>
         </RectButton>
 
-        <Text style={styles.text}>Não tem cadastro? </Text>
-
-        <RectButton onPress={handleNavigateToSignup} style={styles.button}>
-          <Text style={styles.buttonText}>Cadastre-se</Text>
-        </RectButton>
+        <Text onPress={handleNavigateToSignup} style={styles.text}>
+          Don't have an acount? Create here
+        </Text>
       </Container>
     </KeyboardView>
   );
@@ -81,7 +90,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   text: {
-    marginTop: 20,
+    paddingTop: 60,
+    color: "#000",
+    fontSize: 16,
   },
 });
 

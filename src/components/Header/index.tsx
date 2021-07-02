@@ -4,6 +4,7 @@ import { RectButton } from "react-native-gesture-handler";
 
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import auth from "@react-native-firebase/auth";
 
 import styles from "./styles";
 
@@ -15,6 +16,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   const { navigate } = useNavigation();
 
   function handlesignOut() {
+    auth()
+      .signOut()
+      .then(() => console.log("Usuário deslogado!"));
     navigate("Landing");
   }
 
