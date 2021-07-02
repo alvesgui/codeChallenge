@@ -3,7 +3,7 @@
   width="700" heigth="700"><br>
 </p>
 
-## Description
+## ✔️ Description
 
 Code Challenge <b> Partner Up <b>. This mobile application was developed with the goal of testing knowledge regarding [React Native](https://reactnative.dev/) +
 [Firebase](https://firebase.google.com/?hl=pt), In the authentication part as the storage part.
@@ -20,11 +20,11 @@ The projectwas developed with the technologies below:
 
 ## 💻 The project
 
-<p float="left">
-  <img src="/assets/landing.png" width="200" /> 
-  <img src="/assets/login.png" width="200" />
-  <img src="/assets/create.png" width="200" /> 
-  <img src="/assets/home.png" width="200" />
+<p float="center">
+  <img src="/assets/landing.png" width="250" hspace="20" /> 
+  <img src="/assets/login.png" width="250" hspace="20"/>
+  <img src="/assets/create.png" width="250" hspace="20"/> 
+  <img src="/assets/home.png" width="250"hspace="20"/>
 </p>
 
 ## 🔖 Running the project
