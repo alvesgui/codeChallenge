@@ -67,7 +67,7 @@ function Login() {
         </RectButton>
 
         <Text onPress={handleNavigateToSignup} style={styles.text}>
-          Don't have an acount? Create here
+          Don't have an account? Create here
         </Text>
       </Container>
     </KeyboardView>

@@ -27,11 +27,11 @@ function Landing() {
 
       <View style={styles.buttonsContainer}>
         <RectButton onPress={handleNavigateToLogin} style={styles.button}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Sign In</Text>
         </RectButton>
 
         <RectButton onPress={handleNavigateToSignup} style={styles.button}>
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          <Text style={styles.buttonText}>Create Account</Text>
         </RectButton>
       </View>
     </View>
