@@ -1,4 +1,9 @@
 <p align="center">
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=15C3D6&labelColor=000000" alt="ReactNative Firebase" />
+
+</p>
+
+<p align="center">
   <img src= "/assets/icon.png"
   width="701" heigth="701"><br>
 </p>
@@ -43,3 +48,7 @@ to install the necessary dependencies
 to run the application
 
 - running `yarn start`
+
+---
+
+Developed with ♥ by Guilherme Alves :wave:
