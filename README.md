@@ -9,6 +9,7 @@ Code Challenge <b> Partner Up <b>. This mobile application was developed with th
 [Firebase](https://firebase.google.com/?hl=pt), In the authentication part as the storage part.
 
 <br>
+
 ## 🚀 Technologies
 
 The projectwas developed with the technologies below:
@@ -20,6 +21,7 @@ The projectwas developed with the technologies below:
 - [Yarn](https://yarnpkg.com/)
 
 <br>
+
 ## 💻 The project
 
 <br> 
@@ -31,6 +33,7 @@ The projectwas developed with the technologies below:
 </p>
 
 <br>
+
 ## 🔖 Running the project
 
 to install the necessary dependencies
