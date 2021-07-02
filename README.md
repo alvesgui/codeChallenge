@@ -21,9 +21,10 @@ The projectwas developed with the technologies below:
 ## 💻 The project
 
 <p float="left">
-  <img src="/assets/login.png" width="100" />
-  <img src="/assets/landing.png" width="100" /> 
-  <img src="/assets/icon.png" width="100" />
+  <img src="/assets/landing.png" width="200" /> 
+  <img src="/assets/login.png" width="200" />
+  <img src="/assets/create.png" width="200" /> 
+  <img src="/assets/home.png" width="200" />
 </p>
 
 ## 🔖 Running the project
