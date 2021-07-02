@@ -34,7 +34,7 @@ function Signup() {
           }
 
           if (error.code === "auth/invalid-email") {
-            alert("Invalid email");
+            alert("Invalid email!");
           }
         });
     } else {
