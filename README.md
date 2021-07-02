@@ -22,6 +22,7 @@ The projectwas developed with the technologies below:
 <br>
 ## 💻 The project
 
+<br> 
 <p float="center">
   <img src="/assets/landing.png" width="200" hspace="20" /> 
   <img src="/assets/login.png" width="200" hspace="20"/>
