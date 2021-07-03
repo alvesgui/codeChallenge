@@ -6,9 +6,8 @@ import { FontAwesome } from "@expo/vector-icons";
 
 import { useNavigation } from "@react-navigation/native";
 
-import Constants from "expo-constants";
-import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
+
 // import * as ImagePicker from "react-native-image-picker";
 
 import styles from "./styles";

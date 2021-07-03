@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome } from "@expo/vector-icons";
 
 import ItemList from "../pages/ItemLIst";
-import AddItem from "../pages/AddItem";
 import Profile from "../pages/Profile";
+import IncludePhoto from "../pages/IncludePhoto";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -43,14 +43,15 @@ function HomeTabs() {
         component={ItemList}
         options={{
           tabBarLabel: "",
+
           tabBarIcon: ({ color, size }) => {
             return <FontAwesome name="image" size={size} color={color} />;
           },
         }}
       />
       <Screen
-        name="AddItem"
-        component={AddItem}
+        name="IncludePhoto"
+        component={IncludePhoto}
         options={{
           tabBarLabel: "",
           tabBarIcon: ({ color, size }) => {
