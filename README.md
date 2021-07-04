@@ -41,6 +41,10 @@ The projectwas developed with the technologies below:
 
 ## 🔖 Running the project
 
+launch your emulator:
+
+- running `yarn react-native run-android `
+
 to install the necessary dependencies
 
 - running `yarn install`
