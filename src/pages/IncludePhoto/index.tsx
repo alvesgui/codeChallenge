@@ -2,23 +2,83 @@ import React, { useState } from "react";
 import { View, Alert, Text, Image, TextInput } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
-
+import Header from "../../components/Header";
 import * as ImagePicker from "expo-image-picker";
+
 import storage from "@react-native-firebase/storage";
+import firestore from "@react-native-firebase/firestore";
+import firebase from "@react-native-firebase/app";
+
 import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
-import Header from "../../components/Header";
 
 function IncludePhoto() {
   const [image, setImage] = useState("");
-  const [url, setUrl] = useState("");
+  const [upload, setUpload] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [itemImg, setItemImg] = useState("");
 
   const { navigate } = useNavigation();
+  const user = firebase.auth().currentUser;
 
-  async function handleAddImage() {
+  async function handleAddItem() {
+    const imageURL = await uploadPhotoFirebase(image);
+
+    firestore()
+      .collection("items")
+      .add({
+        itemId: user?.uid,
+        name: name,
+        description: description,
+        itemImg: imageURL,
+      })
+      .then(() => {
+        navigate("ItemList");
+        Alert.alert("Added", "Item successfully added", [
+          {
+            text: "OK",
+            onPress: () => null,
+          },
+        ]);
+
+        setName("");
+        setDescription("");
+        setImage("");
+      })
+      .catch(() => {
+        console.log("Algo deu errado!");
+      });
+  }
+
+  async function uploadPhotoFirebase(image: any) {
+    let timestamp = Date.now();
+
+    let pathToFile = "/items" + "/" + timestamp;
+
+    const storageRef = storage().ref(pathToFile);
+    let task = await storageRef.putFile(image);
+
+    try {
+      await task;
+
+      let url = await storageRef.getDownloadURL();
+
+      setUpload(url);
+
+      return url;
+    } catch (e) {
+      Alert.alert("Ops...", "Erro com o upload da foto de perfil ", [
+        {
+          text: "OK",
+          onPress: () => null,
+        },
+      ]);
+      console.error(e);
+    }
+  }
+  async function handleAddImg() {
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
 
     if (status !== "granted") {
@@ -38,39 +98,6 @@ function IncludePhoto() {
     const { uri: image } = result;
 
     setImage(image);
-    uploadPhotoFirebase(image);
-  }
-
-  async function uploadPhotoFirebase(source: any) {
-    let timestamp = Date.now();
-
-    let pathToFile = "/items" + "/" + timestamp;
-
-    let task = await storage().ref(pathToFile).putFile(source);
-
-    try {
-      await task;
-
-      let url = await storage().ref(pathToFile).getDownloadURL();
-
-      setUrl(url);
-    } catch (e) {
-      Alert.alert("Ops...", "Erro com o upload da foto de perfil ", [
-        {
-          text: "OK",
-          onPress: () => null,
-        },
-      ]);
-      console.error(e);
-    }
-  }
-  function handleAddItem() {
-    console.log({ name, description, image });
-    alert("Successfully created item");
-    navigate("ItemList", { url });
-    setName("");
-    setDescription("");
-    setImage("");
   }
 
   return (
@@ -96,11 +123,11 @@ function IncludePhoto() {
           <View style={styles.uploadedImageContainer}>
             <Image source={{ uri: image }} style={styles.uploadedImage} />
           </View>
-
           <View style={styles.containerButton}>
-            <RectButton onPress={handleAddImage} style={styles.buttonImage}>
+            <RectButton onPress={handleAddImg} style={styles.buttonImage}>
               <FontAwesome name="image" size={20} color={"#fff"} />
             </RectButton>
+
             <RectButton onPress={handleAddItem} style={styles.button}>
               <Text style={styles.buttonText}>Save</Text>
             </RectButton>

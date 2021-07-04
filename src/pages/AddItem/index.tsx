@@ -20,7 +20,6 @@ function AddList() {
   const [image, setImage] = useState("");
 
   function handleAddItem() {
-    console.log({ itemName, description, image });
     navigate("HomeTabs");
     setItemName("");
     setDescription("");
