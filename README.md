@@ -34,7 +34,7 @@ The projectwas developed with the technologies below:
   <img src="/assets/landing.png" width="200" hspace="20" /> 
   <img src="/assets/login.png" width="200" hspace="20"/>
   <img src="/assets/create.png" width="200" hspace="20"/> 
-  <img src="/assets/home.png" width="200"hspace="20"/>
+  <img src="/assets/home.png" width="200" hspace="20"/>
   <img src="/assets/infoitem.png" width="200"hspace="20"/>
   <img src="/assets/additem.png" width="200"hspace="20"/>
 
