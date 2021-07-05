@@ -50,7 +50,7 @@ function Signup() {
   return (
     <KeyboardView>
       <Container>
-        <FontAwesome name="user-plus" size={50} />
+        <FontAwesome name="user-plus" size={50} color={"#000"} />
         <Title>Sign Up</Title>
 
         <Input

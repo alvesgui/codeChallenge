@@ -11,9 +11,14 @@ function InfoHeader() {
 
   return (
     <View style={styles.container}>
-      <RectButton onPress={navigation.goBack}>
-        <FontAwesome name="arrow-left" size={25} color="#fff" />
-      </RectButton>
+      <View style={styles.topBar}>
+        <RectButton onPress={navigation.goBack}>
+          <FontAwesome name="arrow-left" size={25} color="#fff" />
+        </RectButton>
+        <RectButton onPress={() => {}}>
+          <FontAwesome name="trash" size={25} color="#FFf" />
+        </RectButton>
+      </View>
     </View>
   );
 }

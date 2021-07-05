@@ -88,6 +88,15 @@ const styles = StyleSheet.create({
   itemList: {
     marginTop: 10,
   },
+  wrapper: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+  },
+  textTransferred: {
+    fontSize: 12,
+    color: "#030303",
+  },
 });
 
 export default styles;

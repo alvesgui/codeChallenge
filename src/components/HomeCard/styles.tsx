@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee",
   },
   container: {
-    height: 100,
     alignItems: "center",
     backgroundColor: "#fff",
   },
