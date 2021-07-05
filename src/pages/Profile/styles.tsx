@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
     paddingTop: 200,
     alignItems: "center",
   },
-  name: { fontSize: 28, marginVertical: 20 },
-  email: { fontSize: 28 },
+  name: { fontSize: 28, marginVertical: 20, color: "#030303" },
+  email: { fontSize: 28, color: "#030303" },
 });
 
 export default styles;

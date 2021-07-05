@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from "./styles";
 
-function ListItem() {
+function ListItem({item}) {
   const { navigate } = useNavigation();
   function handleNavigateToInfoList() {
     navigate("InfoList");
@@ -14,16 +14,7 @@ function ListItem() {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
-        <Image
-          style={styles.photo}
-          source={{ uri: "http://github.com/alvesgui.png" }}
-        />
-
-        <Text style={styles.title}>Guilherme</Text>
-
-        <RectButton onPress={handleNavigateToInfoList} style={styles.button}>
-          <FontAwesome name="plus-circle" size={32} />
-        </RectButton>
+       <Text>{item.description}</Text>
       </View>
     </View>
   );

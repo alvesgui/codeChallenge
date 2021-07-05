@@ -1,53 +1,63 @@
 import React, { useEffect, useState } from "react";
-import { View, ScrollView, FlatList } from "react-native";
+import { View, ScrollView, FlatList, Text } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
 import Header from "../../components/Header";
 import ListItem from "../../components/ListItem";
+import { RectButton } from "react-native-gesture-handler";
+
+import HomeCard from "../../components/HomeCard";
 
 import firestore from "@react-native-firebase/firestore";
 
 import styles from "./styles";
 
 function ItemList() {
-  const [item, setItem] = useState(null);
+  const [items, setItems] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchItems = async () => {
       try {
         const list = [];
-        firestore()
+        await firestore()
           .collection("items")
           .get()
           .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               const { itemId, name, itemImg, description } = doc.data();
               list.push({
-                itemId: itemId,
+                id: doc.id,
+                itemId,
                 name,
                 itemImg,
                 description,
               });
             });
           });
-        setItem(list);
+        setItems(list);
 
         if (loading) {
           setLoading(false);
         }
-        console.log("Items ", list);
       } catch (e) {
         console.log(e);
       }
     };
     fetchItems();
-  }, []);
+  }, [items]);
 
   return (
     <View style={styles.container}>
       <Header title="Watchlist" />
+
       <ScrollView style={styles.itemList}>
-        <ListItem />
+        <FlatList
+          data={items}
+          renderItem={({ item }) => <HomeCard item={item} /> }
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+        />
       </ScrollView>
     </View>
   );

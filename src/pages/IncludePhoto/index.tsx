@@ -35,7 +35,6 @@ function IncludePhoto() {
         itemImg: imageURL,
       })
       .then(() => {
-        navigate("ItemList");
         Alert.alert("Added", "Item successfully added", [
           {
             text: "OK",
