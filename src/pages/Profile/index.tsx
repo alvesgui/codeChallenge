@@ -16,7 +16,7 @@ function Profile() {
         <Header title="Profile" />
         <View style={styles.profile}>
           <FontAwesome name="user-circle" size={50} />
-          <Text style={styles.name}>User data</Text>
+          <Text style={styles.name}>Dados do usuário</Text>
           <Text style={styles.email}>Email: {user.email}</Text>
         </View>
       </View>
