@@ -50,28 +50,30 @@ function Signup() {
   return (
     <KeyboardView>
       <Container>
-        <FontAwesome name="user-plus" size={50} color={"#000"} />
-        <Title>Sign Up</Title>
+        <FontAwesome name="user-plus" size={50} color={"#fff"} />
+        <Title>Cadastrar</Title>
 
         <Input
           keyboardType={"email-address"}
-          placeholder={"Email"}
+          placeholder={"Seu email"}
+          placeholderTextColor={"#b5b1b1"}
           value={email}
           onChangeText={(text) => setEmail(text)}
         />
         <Input
           secureTextEntry
-          placeholder={"password"}
+          placeholder={"******"}
+          placeholderTextColor={"#b5b1b1"}
           maxLength={6}
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
         <RectButton onPress={handleCreateUser} style={styles.button}>
-          <Text style={styles.buttonText}>Create</Text>
+          <Text style={styles.buttonText}>Cadastrar</Text>
         </RectButton>
 
         <Text onPress={handleNavigateToLogin} style={styles.text}>
-          Already have registration? Sign In
+          Já possui Cadastro? Faça Login
         </Text>
       </Container>
     </KeyboardView>
@@ -80,7 +82,7 @@ function Signup() {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#000",
+    backgroundColor: "#082130",
     borderRadius: 9,
     width: "70%",
     padding: 20,
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingTop: 60,
-    color: "#000",
+    color: "#fff",
     fontSize: 16,
   },
 });

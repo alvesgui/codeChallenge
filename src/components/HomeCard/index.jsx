@@ -28,7 +28,7 @@ function HomeCard({ item }) {
 
           <Text style={styles.text}>{item.name}</Text>
           <RectButton onPress={handleNavigateToInfoList} style={styles.button}>
-            <FontAwesome name="plus-circle" size={32} color={"#000"} />
+            <FontAwesome name="plus-circle" size={32} color={"#082130"} />
           </RectButton>
         </ItemInfo>
         </View>

@@ -121,18 +121,18 @@ function IncludePhoto() {
 
   return (
     <View style={styles.container}>
-      <Header title="Create item" />
+      <Header title="Criar objeto" />
       <View style={styles.containerAdd}>
-        <Text style={styles.title}>Data</Text>
+        <Text style={styles.title}>Dados</Text>
         <View style={styles.profile}>
-          <Text style={styles.label}>Name</Text>
+          <Text style={styles.label}>Nome</Text>
           <TextInput
             style={styles.input}
             value={name}
             onChangeText={(text) => setName(text)}
           />
 
-          <Text style={styles.label}>Description</Text>
+          <Text style={styles.label}>Descrição</Text>
           <TextInput
             style={[styles.input]}
             value={description}
@@ -149,12 +149,12 @@ function IncludePhoto() {
             </RectButton>
             {uploading ? (
               <View style={styles.wrapper}>
-                <Text style={styles.textTransferred}>{transferred} % Completed</Text>
+                <Text style={styles.textTransferred}>{transferred} % Completado</Text>
                 <ActivityIndicator size="large" color="#030303" />
               </View>
             ) : (
               <RectButton onPress={handleAddItem} style={styles.button}>
-                <Text style={styles.buttonText}>Save</Text>
+                <Text style={styles.buttonText}>Salvar</Text>
               </RectButton>
             )}
             

@@ -50,7 +50,7 @@ function AddList() {
   return (
     <ScrollView style={styles.itemList}>
       <View style={styles.container}>
-        <Header title="Create item" />
+        <Header title="Criar um objeto" />
         <View style={styles.containerAdd}>
           <Text style={styles.title}>Data</Text>
           <View style={styles.profile}>

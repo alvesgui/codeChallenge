@@ -1,7 +1,9 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+
+import logo from "../../assets/logo.png";
 
 import styles from "./styles";
 
@@ -17,21 +19,27 @@ function Landing() {
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-        <Text style={styles.logo}>UP</Text>
-      </View>
-
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>Partner UP</Text>
-        <Text style={styles.subtitle}>Fintech + A.I.</Text>
+        <Image source={logo} style={styles.img} resizeMode="contain" />
+        <Text style={styles.title}>
+          Gerencie seus dispositivos IoT {"\n"} de forma fácil
+        </Text>
       </View>
 
       <View style={styles.buttonsContainer}>
-        <RectButton onPress={handleNavigateToLogin} style={styles.button}>
-          <Text style={styles.buttonText}>Sign In</Text>
+        <RectButton
+          onPress={handleNavigateToLogin}
+          activeOpacity={0.5}
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Entrar</Text>
         </RectButton>
 
-        <RectButton onPress={handleNavigateToSignup} style={styles.button}>
-          <Text style={styles.buttonText}>Create Account</Text>
+        <RectButton
+          onPress={handleNavigateToSignup}
+          activeOpacity={0.5}
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Criar Conta</Text>
         </RectButton>
       </View>
     </View>

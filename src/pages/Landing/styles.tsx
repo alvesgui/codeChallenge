@@ -1,49 +1,34 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
+    backgroundColor: "#1d5763",
+    justifyContent: "space-around",
     padding: 40,
   },
 
   logoContainer: {
     alignItems: "center",
   },
-
-  logo: {
-    backgroundColor: "#fff",
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#000",
-    padding: 20,
-    fontSize: 100,
-    fontFamily: "LondrinaShadow_400Regular",
-  },
-  textContainer: {
-    paddingVertical: 20,
-    alignItems: "center",
+  img: {
+    height: 480,
   },
 
   title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    lineHeight: 30,
-    marginTop: 20,
+    fontSize: 22,
+    lineHeight: 38,
+    fontFamily: "Jost_400Regular",
+    textAlign: "center",
+    color: "#fff",
   },
 
-  subtitle: {
-    fontSize: 20,
-    lineHeight: 30,
-  },
   buttonsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: 100,
   },
   button: {
-    backgroundColor: "#000",
+    backgroundColor: "#082130",
     borderRadius: 9,
     width: 150,
     padding: 20,
@@ -55,6 +40,13 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 16,
+  },
+  buttonIcon: {
+    height: 60,
+    width: 60,
+    backgroundColor: "rgba(0, 0, 0, 0.1)",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

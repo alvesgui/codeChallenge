@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   button: {
-    backgroundColor: "#000",
+    backgroundColor: "#082130",
     borderRadius: 9,
     width: "70%",
     padding: 20,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   buttonImage: {
-    backgroundColor: "#030303",
+    backgroundColor: "#082130",
     borderRadius: 9,
     width: "55%",
     padding: 20,

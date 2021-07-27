@@ -49,7 +49,7 @@ function ItemList() {
 
   return (
     <View style={styles.container}>
-      <Header title="Watchlist" />
+      <Header title="Seus Objetos" />
 
       <ScrollView style={styles.itemList}>
         <FlatList

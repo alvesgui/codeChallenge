@@ -32,10 +32,10 @@ function HomeTabs() {
           fontSize: 13,
           marginLeft: 16,
         },
-        inactiveBackgroundColor: "#fafafc",
-        activeBackgroundColor: "#d3d3d3",
-        inactiveTintColor: "#c1bccc",
-        activeTintColor: "#000",
+        inactiveBackgroundColor: "#1d5763",
+        activeBackgroundColor: "#082130",
+        inactiveTintColor: "#fff",
+        activeTintColor: "#fff",
       }}
     >
       <Screen
