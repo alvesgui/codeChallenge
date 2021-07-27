@@ -6,11 +6,15 @@ import {
   LondrinaShadow_400Regular,
 } from "@expo-google-fonts/londrina-shadow";
 
+import { Jost_400Regular, Jost_600SemiBold } from "@expo-google-fonts/jost";
+
 import AppStack from "./src/routes/AppStack";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     LondrinaShadow_400Regular,
+    Jost_400Regular,
+    Jost_600SemiBold,
   });
 
   if (!fontsLoaded) {
