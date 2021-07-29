@@ -7,6 +7,8 @@ const styles = StyleSheet.create({
   },
   subContainer: {
     padding: 30,
+    justifyContent: "center",
+    alignItems: "center",
   },
   wrapperContainer: {
     flexDirection: "row",
