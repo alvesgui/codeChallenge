@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   containerAdd: { alignItems: "center" },
   title: {
     color: "#000",
-    fontSize: 32,
+    fontSize: 28,
     marginBottom: 15,
     paddingBottom: 16,
     borderBottomWidth: 0.8,
@@ -52,6 +52,13 @@ const styles = StyleSheet.create({
   },
   containerButton: {
     alignItems: "center",
+  },
+
+  textButtonImage: {
+    fontFamily: "Roboto-Regular",
+    fontSize: 16,
+    color: "#000",
+    textDecorationLine: "underline",
   },
   button: {
     backgroundColor: "#082130",

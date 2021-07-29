@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     color: "#fff",
-    maxWidth: 180,
+    maxWidth: 250,
     marginVertical: 40,
     lineHeight: 32,
   },

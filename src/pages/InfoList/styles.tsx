@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  infoContainer: {
+  subContainer: {
     padding: 30,
   },
   wrapperContainer: {
@@ -22,11 +22,36 @@ const styles = StyleSheet.create({
     fontSize: 22,
     marginTop: 20,
   },
+  input: {
+    height: 40,
+    margin: 12,
+    width: 200,
+    borderWidth: 1,
+  },
   photo: {
     width: 64,
     height: 64,
     borderRadius: 32,
     backgroundColor: "#eee",
+  },
+  button: {
+    backgroundColor: "#082130",
+    borderRadius: 9,
+    width: "70%",
+    padding: 20,
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+  },
+  text: {
+    paddingTop: 60,
+    color: "#fff",
+    fontSize: 16,
   },
 });
 

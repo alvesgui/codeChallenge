@@ -45,7 +45,7 @@ function HomeTabs() {
           tabBarLabel: "",
 
           tabBarIcon: ({ color, size }) => {
-            return <FontAwesome name="image" size={size} color={color} />;
+            return <FontAwesome name="link" size={size} color={color} />;
           },
         }}
       />
@@ -55,7 +55,7 @@ function HomeTabs() {
         options={{
           tabBarLabel: "",
           tabBarIcon: ({ color, size }) => {
-            return <FontAwesome name="user-plus" size={size} color={color} />;
+            return <FontAwesome name="plus" size={size} color={color} />;
           },
         }}
       />
@@ -65,7 +65,9 @@ function HomeTabs() {
         options={{
           tabBarLabel: "",
           tabBarIcon: ({ color, size }) => {
-            return <FontAwesome name="user" size={size} color={color} />;
+            return (
+              <FontAwesome name="connectdevelop" size={size} color={color} />
+            );
           },
         }}
       />

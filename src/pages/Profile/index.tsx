@@ -1,27 +1,55 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput } from "react-native";
 import Header from "../../components/Header";
 import { FontAwesome } from "@expo/vector-icons";
 
-import firebase from "@react-native-firebase/app";
+import { RectButton } from "react-native-gesture-handler";
 
 import styles from "./styles";
 
 function Profile() {
-  const user = firebase.auth().currentUser;
+  const [hostName, setHostName] = useState("broker.mqttdashboard.com");
+  const [porta, setPorta] = useState("");
+  const [clienteId, setClienteId] = useState("");
 
-  if (user) {
-    return (
-      <View style={styles.container}>
-        <Header title="Profile" />
-        <View style={styles.profile}>
-          <FontAwesome name="user-circle" size={50} />
-          <Text style={styles.name}>Dados do usuário</Text>
-          <Text style={styles.email}>Email: {user.email}</Text>
+  return (
+    <View style={styles.container}>
+      <Header title="Conexão MQTT" />
+      <View style={styles.profile}>
+        <View style={styles.containerAdd}>
+          <Text style={styles.title}>Broker HIVEMQ</Text>
+          <View style={styles.profile}>
+            <Text style={styles.label}>Hostname</Text>
+            <TextInput
+              style={styles.input}
+              value={hostName}
+              onChangeText={(text) => setHostName(text)}
+              editable={false}
+            />
+
+            <Text style={styles.label}>Porta</Text>
+            <TextInput
+              style={[styles.input]}
+              value={porta}
+              onChangeText={(text) => setPorta(text)}
+            />
+            <Text style={styles.label}>Cliente Id</Text>
+            <TextInput
+              style={[styles.input]}
+              value={clienteId}
+              onChangeText={(text) => setClienteId(text)}
+            />
+
+            <View style={styles.containerButton}>
+              <RectButton onPress={() => {}} style={styles.button}>
+                <Text style={styles.buttonText}>Conectar</Text>
+              </RectButton>
+            </View>
+          </View>
         </View>
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 export default Profile;

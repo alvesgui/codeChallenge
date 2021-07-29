@@ -1,7 +1,13 @@
 import React from "react";
 
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View, TextInput, Button, AsyncStorage} from 'react-native'
+import {Text, View, TextInput, Button, AsyncStorage} from 'react-native'
+import { RectButton } from "react-native-gesture-handler";
+
+import Header from "../../components/Header";
+
+import styles from "./styles";
+
 
 import init from 'react_native_mqtt'
 
@@ -55,37 +61,28 @@ function InfoList() {
 
     return (
       <View style={styles.container}>
-        {initMqtt()}
-        <Text>status {!connected && 'não'} conectado</Text>
-        <Text>{`mensagens no tópico ${topic}: `}</Text>
-        {brokerText && brokerText.map((txt, i) => <Text key={i}>{txt}</Text>)}  
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeText}
-          value={text}
-        />
-        <Button
-          title="Enviar"
-          onPress={() => sendMessage(text, topic)}
-        />
-        <StatusBar style="auto" />
+        <Header title="Conectar no broker" />
+        <View style={styles.subContainer}>   
+          {initMqtt()}
+          <Text>status {!connected && 'não'} conectado</Text>
+          <Text>{`mensagens no tópico ${topic}: `}</Text>
+          {brokerText && brokerText.map((txt, i) => <Text key={i}>{txt}</Text>)}  
+          <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+            value={text}
+          />
+          
+          <RectButton
+            onPress={() => sendMessage(text, topic)}
+            style={styles.button}> 
+              <Text style={styles.buttonText}>Conectar</Text>
+          </RectButton>
+          <StatusBar style="auto" />
+        </View>
       </View>
     )
 }
 
 export default InfoList;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    width: 200,
-    borderWidth: 1,
-  },
-})

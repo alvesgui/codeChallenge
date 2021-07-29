@@ -3,8 +3,6 @@ import { View, ScrollView, FlatList, Text } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 import Header from "../../components/Header";
-import ListItem from "../../components/ListItem";
-import { RectButton } from "react-native-gesture-handler";
 
 import HomeCard from "../../components/HomeCard";
 
