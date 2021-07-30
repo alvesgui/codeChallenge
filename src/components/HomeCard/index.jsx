@@ -25,16 +25,16 @@ function HomeCard({ item }) {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       {user?.uid === item.itemId ? 
         (
-          <View style={styles.card}>
+          <View style={isConected ? styles.card: styles.cardNo}>
             <ItemInfo>
-              <TouchableOpacity onPress={handleNavigateToInfoList}>
+              <TouchableOpacity onPress={isConected ? handleNavigateToInfoList : () => {}}>
                 <Image style={styles.photo} source={{ uri: item.itemImg }} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={handleNavigateToInfoList}>
-                <Text style={styles.text}>{item.name}</Text>
+              <TouchableOpacity onPress={isConected ? handleNavigateToInfoList : () => {}}>
+                <Text style={isConected ? styles.text: styles.textNo}>{item.name}</Text>
               </TouchableOpacity>
               <Switch 
                 trackColor={{false: '#cbcbcb', true: '#cbcbcb'}}

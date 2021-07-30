@@ -4,6 +4,7 @@ import { RectButton } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
 import logo from "../../assets/logo.png";
+import icon from "../../assets/icon.png";
 
 import styles from "./styles";
 
@@ -18,13 +19,14 @@ function Landing() {
   }
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>IoT Manager</Text>
       <View style={styles.logoContainer}>
-        <Image source={logo} style={styles.img} resizeMode="contain" />
-        <Text style={styles.title}>
-          Gerencie seus dispositivos IoT {"\n"} de forma fácil
-        </Text>
+        <Image source={icon} style={styles.img} resizeMode="contain" />
       </View>
 
+      <Text style={styles.subTitle}>
+        Gerencie seus dispositivos IoT {"\n"} de forma fácil
+      </Text>
       <View style={styles.buttonsContainer}>
         <RectButton
           onPress={handleNavigateToLogin}

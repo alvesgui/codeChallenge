@@ -12,10 +12,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   img: {
-    height: 480,
+    height: 300,
+  },
+  title: {
+    fontSize: 24,
+    lineHeight: 38,
+    fontFamily: "Jost_400Regular",
+    textAlign: "center",
+    color: "#fff",
+    fontWeight: "bold",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
   },
 
-  title: {
+  subTitle: {
     fontSize: 22,
     lineHeight: 38,
     fontFamily: "Jost_400Regular",

@@ -3,7 +3,7 @@ import { StyleSheet, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
 import { RectButton } from "react-native-gesture-handler";
-import { KeyboardView, Title, Container, Input } from "./styles";
+import { KeyboardView, Container, Input } from "./styles";
 import auth from "@react-native-firebase/auth";
 
 interface User {
@@ -51,11 +51,11 @@ function Signup() {
     <KeyboardView>
       <Container>
         <FontAwesome name="user-plus" size={50} color={"#fff"} />
-        <Title>Cadastrar</Title>
+        <Text style={styles.title}>Cadastrar</Text>
 
         <Input
           keyboardType={"email-address"}
-          placeholder={"Seu email"}
+          placeholder={"email@email.com"}
           placeholderTextColor={"#b5b1b1"}
           value={email}
           onChangeText={(text) => setEmail(text)}
@@ -99,6 +99,19 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     color: "#fff",
     fontSize: 16,
+  },
+  title: {
+    fontSize: 24,
+    paddingBottom: 20,
+    paddingTop: 10,
+    lineHeight: 38,
+    fontFamily: "Jost_400Regular",
+    textAlign: "center",
+    color: "#fff",
+    fontWeight: "bold",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
   },
 });
 

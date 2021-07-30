@@ -34,19 +34,6 @@ const styles = StyleSheet.create({
 
     width: 300,
   },
-
-  inputMultiline: {
-    backgroundColor: "#fff",
-    borderWidth: 1.4,
-    borderColor: "#030303",
-    borderRadius: 9,
-    height: 56,
-    paddingVertical: 18,
-    paddingHorizontal: 24,
-    marginBottom: 16,
-
-    width: 300,
-  },
   profile: {
     paddingTop: 0,
   },

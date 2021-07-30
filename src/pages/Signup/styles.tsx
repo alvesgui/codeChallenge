@@ -6,13 +6,6 @@ export const KeyboardView = styled.KeyboardAvoidingView`
   justify-content: center;
 `;
 
-export const Title = styled.Text`
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 30px;
-`;
-
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
@@ -23,11 +16,12 @@ export const Container = styled.View`
 `;
 
 export const Input = styled.TextInput`
-  border: 2px solid #fff;
+  border: 2px solid #cbcbcb;
+  background-color: #fff;
   margin-bottom: 30px;
   padding: 15px 20px;
-  color: #fff;
-  font-size: 20px;
+  color: #000;
+  font-size: 15px;
   border-radius: 9px;
   width: 80%;
 `;
