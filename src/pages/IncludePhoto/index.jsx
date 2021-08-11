@@ -37,7 +37,7 @@ function IncludePhoto() {
           itemImg: imageURL,
         })
         .then(() => {
-          Alert.alert("Added", "Item successfully added", [
+          Alert.alert("Adicionado", "Item adicionado com sucesso.", [
             {
               text: "OK",
               onPress: () => null,
@@ -52,7 +52,7 @@ function IncludePhoto() {
           console.log("Algo deu errado!");
         });
       }else {
-        alert("Fill in all fields!");
+        alert("Preencha todos os campos!");
       }
     }
 

@@ -1,13 +1,10 @@
 import React, {useState} from "react";
 import { Text, Image, View, Switch, TouchableOpacity } from "react-native";
-
-import { Card, ItemInfo } from "../../styles/HomeStyles";
-
-import styles from "./styles";
-
 import { useNavigation } from "@react-navigation/native";
-
 import firebase from "@react-native-firebase/app";
+
+import {ItemInfo } from "../../styles/HomeStyles";
+import styles from "./styles";
 
 function HomeCard({ item }) {
   const { navigate } = useNavigation();

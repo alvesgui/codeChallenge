@@ -23,22 +23,22 @@ function Signup() {
       auth()
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
-          alert("User created successfully!");
+          alert("Usuário criado com sucesso!");
           navigate("Login");
           setEmail("");
           setPassword("");
         })
         .catch((error) => {
           if (error.code === "auth/email-already-in-use") {
-            alert("Email already in use!");
+            alert("Email já está sendo utilziado!");
           }
 
           if (error.code === "auth/invalid-email") {
-            alert("Invalid email!");
+            alert("Email inválido!");
           }
         });
     } else {
-      alert("Fill in all fields!");
+      alert("Preencha todos os campos");
     }
   }
 

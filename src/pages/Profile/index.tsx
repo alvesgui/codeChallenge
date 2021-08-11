@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput } from "react-native";
 import Header from "../../components/Header";
-import { FontAwesome } from "@expo/vector-icons";
 
 import { RectButton } from "react-native-gesture-handler";
 
@@ -11,6 +10,19 @@ function Profile() {
   const [hostName, setHostName] = useState("broker.mqttdashboard.com");
   const [porta, setPorta] = useState("");
   const [clienteId, setClienteId] = useState("");
+  const [status, setStatus] = useState(false);
+
+  function onPressConection() {
+    setStatus(true);
+    console.log(status);
+  }
+
+  function onPressDesconection() {
+    setStatus(false);
+    console.log(status);
+  }
+
+  console.log("Antes de tocar", status);
 
   return (
     <View style={styles.container}>
@@ -41,8 +53,18 @@ function Profile() {
             />
 
             <View style={styles.containerButton}>
-              <RectButton onPress={() => {}} style={styles.button}>
+              <RectButton
+                onPress={onPressConection}
+                style={status ? styles.buttonNo : styles.button}
+              >
                 <Text style={styles.buttonText}>Conectar</Text>
+              </RectButton>
+
+              <RectButton
+                onPress={onPressDesconection}
+                style={status ? styles.buttonDesc : styles.buttonNo}
+              >
+                <Text style={styles.buttonText}>Desconectar</Text>
               </RectButton>
             </View>
           </View>

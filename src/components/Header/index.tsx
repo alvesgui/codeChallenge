@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   function handlesignOut() {
     auth()
       .signOut()
-      .then(() => console.log("Usuário deslogado!"));
+      .then(() => {});
     navigate("Landing");
   }
 

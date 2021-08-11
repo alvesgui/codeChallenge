@@ -52,6 +52,28 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
 
+  buttonDesc: {
+    backgroundColor: "#cf0e0e",
+    borderRadius: 9,
+    width: "70%",
+    padding: 20,
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 40,
+  },
+
+  buttonNo: {
+    backgroundColor: "#cbcbcb",
+    borderRadius: 9,
+    width: "70%",
+    padding: 20,
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 40,
+  },
+
   buttonText: {
     color: "#fff",
     fontSize: 16,

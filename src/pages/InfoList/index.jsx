@@ -20,7 +20,7 @@ init({
   sync: {},
 })
 
-var client, connected = false, topic = 'Maguilove3000'
+var client, connected = false, topic = 'SensorTemp'
 
 function InfoList() {
 
