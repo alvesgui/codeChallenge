@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: "#1d5763",
+    backgroundColor: "#072333",
   },
   topBar: {
     flexDirection: "row",

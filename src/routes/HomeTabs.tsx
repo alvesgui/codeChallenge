@@ -14,28 +14,21 @@ function HomeTabs() {
     <Navigator
       tabBarOptions={{
         style: {
+          position: "absolute",
+          borderRadius: 15,
           elevation: 0,
-          shadowOpacity: 0,
-          height: 64,
+          shadowOpacity: 0.5,
+          shadowRadius: 4,
+          shadowOffset: {
+            width: 0,
+            height: 10,
+          },
+          bottom: 15,
+          left: 10,
+          right: 10,
+          height: 90,
+          backgroundColor: "#fff",
         },
-        tabStyle: {
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-        },
-        iconStyle: {
-          flex: 0,
-          width: 20,
-          height: 20,
-        },
-        labelStyle: {
-          fontSize: 13,
-          marginLeft: 16,
-        },
-        inactiveBackgroundColor: "#1d5763",
-        activeBackgroundColor: "#082130",
-        inactiveTintColor: "#fff",
-        activeTintColor: "#fff",
       }}
     >
       <Screen
@@ -44,8 +37,14 @@ function HomeTabs() {
         options={{
           tabBarLabel: "",
 
-          tabBarIcon: ({ color, size }) => {
-            return <FontAwesome name="link" size={size} color={color} />;
+          tabBarIcon: ({ focused }) => {
+            return (
+              <FontAwesome
+                name="link"
+                size={30}
+                color={focused ? "#072333" : "#748c94"}
+              />
+            );
           },
         }}
       />
@@ -54,8 +53,14 @@ function HomeTabs() {
         component={IncludePhoto}
         options={{
           tabBarLabel: "",
-          tabBarIcon: ({ color, size }) => {
-            return <FontAwesome name="plus" size={size} color={color} />;
+          tabBarIcon: ({ focused }) => {
+            return (
+              <FontAwesome
+                name="plus"
+                size={30}
+                color={focused ? "#072333" : "#748c94"}
+              />
+            );
           },
         }}
       />
@@ -64,9 +69,13 @@ function HomeTabs() {
         component={Profile}
         options={{
           tabBarLabel: "",
-          tabBarIcon: ({ color, size }) => {
+          tabBarIcon: ({ focused }) => {
             return (
-              <FontAwesome name="connectdevelop" size={size} color={color} />
+              <FontAwesome
+                name="connectdevelop"
+                size={30}
+                color={focused ? "#072333" : "#748c94"}
+              />
             );
           },
         }}

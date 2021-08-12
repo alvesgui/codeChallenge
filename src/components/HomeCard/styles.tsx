@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
   },
   container: {
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#1d5763",
   },
   card: {
     marginTop: 20,
-    backgroundColor: "#274c67",
+    backgroundColor: "#082130",
     borderRadius: 10,
     width: "90%",
     padding: 20,

@@ -76,7 +76,7 @@ function InfoList() {
           <RectButton
             onPress={() => sendMessage(text, topic)}
             style={styles.button}> 
-              <Text style={styles.buttonText}>Conectar</Text>
+              <Text style={styles.buttonText}>Enviar Mensagem</Text>
           </RectButton>
           <StatusBar style="auto" />
         </View>
