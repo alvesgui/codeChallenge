@@ -1,26 +1,34 @@
 import React from "react";
-import { View, Image, Text } from "react-native";
+import { View, Text } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
+
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import auth from "@react-native-firebase/auth";
 
 import styles from "./styles";
 
-function InfoHeader() {
-  const navigation = useNavigation();
+interface HeaderProps {
+  title?: string;
+}
+
+const InfoHeader: React.FC<HeaderProps> = ({ title }) => {
+  const { navigate } = useNavigation();
+
+  function handleNavigateToInfoList() {
+    navigate("ItemList");
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
-        <RectButton onPress={navigation.goBack}>
-          <FontAwesome name="arrow-left" size={25} color="#fff" />
-        </RectButton>
-        <RectButton onPress={() => {}}>
-          <FontAwesome name="trash" size={25} color="#FFf" />
+        <Text style={styles.title}>{title}</Text>
+        <RectButton onPress={handleNavigateToInfoList}>
+          <FontAwesome name="times" size={20} color="#fff" />
         </RectButton>
       </View>
     </View>
   );
-}
+};
 
 export default InfoHeader;

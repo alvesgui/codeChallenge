@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    top: 30,
   },
   button: {
     backgroundColor: "#fff",
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#000",
     fontSize: 16,
+    fontWeight: "bold",
   },
   buttonIcon: {
     height: 60,

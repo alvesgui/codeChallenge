@@ -2,18 +2,18 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    padding: 50,
-    backgroundColor: "#000",
+    padding: 20,
+    backgroundColor: "#072333",
   },
   topBar: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
+    justifyContent: "space-between",
   },
   title: {
     fontSize: 24,
     color: "#fff",
-    maxWidth: 180,
+    maxWidth: 250,
     marginVertical: 40,
     lineHeight: 32,
   },

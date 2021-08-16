@@ -14,7 +14,7 @@ function HomeCard({ item }) {
   const user = firebase.auth().currentUser;
 
   function handleNavigateToInfoList() {
-    navigate("InfoList",{item});
+    navigate("BrokerTabs",{item});
   }
 
   function onConected() {

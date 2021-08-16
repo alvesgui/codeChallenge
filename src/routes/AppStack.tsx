@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import HomeTabs from "./HomeTabs";
 import InfoList from "../pages/InfoList";
+import BrokerTabs from "./BrokerTabs";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -19,6 +20,7 @@ function AppStack() {
         <Screen name="Signup" component={Signup} />
         <Screen name="HomeTabs" component={HomeTabs} />
         <Screen name="InfoList" component={InfoList} />
+        <Screen name="BrokerTabs" component={BrokerTabs} />
       </Navigator>
     </NavigationContainer>
   );
