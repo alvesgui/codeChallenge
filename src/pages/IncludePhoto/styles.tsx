@@ -3,12 +3,16 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#082130",
+    backgroundColor: "#223a57",
   },
   containerAdd: { alignItems: "center" },
   title: {
-    color: "#000",
-    fontSize: 28,
+    color: "#fff",
+    fontWeight: "bold",
+    textShadowColor: "rgba(0, 0, 0, 0.75)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
+    fontSize: 24,
     marginBottom: 15,
     paddingBottom: 16,
     borderBottomWidth: 0.8,
@@ -16,7 +20,7 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    color: "#030303",
+    color: "#fff",
     marginBottom: 8,
     fontSize: 15,
     fontWeight: "bold",
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#fff",
     borderWidth: 1.4,
-    borderColor: "#030303",
+    borderColor: "#dcdc",
     borderRadius: 9,
     height: 56,
     paddingVertical: 18,
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
   textButtonImage: {
     fontFamily: "Roboto-Regular",
     fontSize: 16,
-    color: "#000",
+    color: "#fff",
     textDecorationLine: "underline",
   },
   button: {

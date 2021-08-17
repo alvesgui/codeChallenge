@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1d5763",
+    backgroundColor: "#223a57",
   },
   itemList: {
-    marginTop: 10,
+    marginTop: 5,
   },
 });
 

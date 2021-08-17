@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#223a57",
   },
   subContainer: {
     padding: 30,
@@ -25,10 +25,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   input: {
-    height: 40,
-    margin: 12,
-    width: 200,
-    borderWidth: 1,
+    backgroundColor: "#fff",
+    borderWidth: 1.4,
+    borderColor: "#fff",
+    borderRadius: 9,
+    height: 56,
+    paddingVertical: 18,
+    paddingHorizontal: 24,
+    marginBottom: 16,
+    width: 300,
   },
   photo: {
     width: 64,
@@ -54,6 +59,12 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     color: "#fff",
     fontSize: 16,
+  },
+  label: {
+    color: "#fff",
+    marginBottom: 8,
+    fontSize: 15,
+    fontWeight: "bold",
   },
 });
 

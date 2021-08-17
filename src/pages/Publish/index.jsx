@@ -68,6 +68,7 @@ function Publish() {
           <Text>status {!connected && 'não'} conectado</Text>
           <Text>{`mensagens no tópico ${topic}: `}</Text>
           {brokerText && brokerText.map((txt, i) => <Text key={i}>{txt}</Text>)}  
+
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}

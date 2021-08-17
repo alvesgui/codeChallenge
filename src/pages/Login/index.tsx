@@ -34,7 +34,7 @@ function Login() {
           }
         });
     } else {
-      alert("Fill in all fields!");
+      alert("Preencha Todos os campos!");
     }
   }
   function handleNavigateToSignup() {

@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState}from "react";
 
 import { StatusBar } from 'expo-status-bar'
-import {Text, View, TextInput, Button, AsyncStorage} from 'react-native'
+import {Text, View, TextInput, Picker, AsyncStorage} from 'react-native'
 import { RectButton } from "react-native-gesture-handler";
 
 import Header from "../../components/Header";
@@ -24,7 +24,7 @@ init({
 var client, connected = false, topic = 'SensorTemp'
 
 function Subscribe() {
-
+  const [selectedValue, setSelectedValue] = useState("0");
   
     function initMqtt() {
       client = new Paho.MQTT.Client('broker.mqttdashboard.com', 8000, 'user123456')
@@ -68,16 +68,29 @@ function Subscribe() {
           <Text>status {!connected && 'não'} conectado</Text>
           <Text>{`mensagens no tópico ${topic}: `}</Text>
           {brokerText && brokerText.map((txt, i) => <Text key={i}>{txt}</Text>)}  
+          <Text style={styles.label}>Tópico:</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeText}
             value={text}
           />
+          <Text style={styles.label}>QOS:</Text>
+          <View>
+      <Picker
+        selectedValue={selectedValue}
+        style={{ height: 50, width: 150 }}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="0" value="0" />
+        <Picker.Item label="1" value="1" />
+        <Picker.Item label="2" value="2" />
+      </Picker>
+    </View>
           
           <RectButton
             onPress={() => sendMessage(text, topic)}
             style={styles.button}> 
-              <Text style={styles.buttonText}>Conectar</Text>
+              <Text style={styles.buttonText}>Incresver</Text>
           </RectButton>
         </View>
       </View>
