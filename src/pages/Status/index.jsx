@@ -20,7 +20,7 @@ var client,
   connected = false,
   topic = "SensorTemp";
 
-function Profile() {
+function Status() {
   const [hostName, setHostName] = useState("broker.mqttdashboard.com");
   const [porta, setPorta] = useState("");
   const [clienteId, setClienteId] = useState("");
@@ -65,54 +65,11 @@ function Profile() {
 
   return (
     <View style={styles.container}>
-      <Header title="Conexão MQTT" />
+      <Header title="Status" />
       <View style={styles.profile}>
         <View style={styles.containerAdd}>
-          <Text style={styles.title}>Broker HIVEMQ</Text>
+          <Text style={styles.title}>Status da Conexão</Text>
           <View style={styles.profile}>
-            <Text style={styles.label}>Hostname:</Text>
-            <TextInput
-              style={styles.input}
-              value={hostName}
-              onChangeText={(text) => setHostName(text)}
-              editable={!status}
-              placeholder={"broker.mqttdashboard.com"}
-            />
-            <Text style={styles.label}>Cliente Id:</Text>
-            <TextInput
-              style={[styles.input]}
-              value={clienteId}
-              onChangeText={(text) => setClienteId(text)}
-              editable={!status}
-              placeholder={"userid123456"}
-            />
-            <Text style={styles.label}>Porta:</Text>
-            <View style={styles.clearSession}>
-              <TextInput
-                style={[styles.inputPort]}
-                value={porta}
-                onChangeText={(text) => setPorta(text)}
-                editable={!status}
-                maxLength={4}
-                placeholder={"8000"}
-                keyboardType={"numeric"}
-              />
-            </View>
-
-            <View style={styles.containerButton}>
-              {status ? (
-                <RectButton
-                  onPress={onConnectionLost}
-                  style={styles.buttonDesc}
-                >
-                  <Text style={styles.buttonText}>Desconectar</Text>
-                </RectButton>
-              ) : (
-                <RectButton onPress={onConnect} style={styles.button}>
-                  <Text style={styles.buttonText}>Conectar</Text>
-                </RectButton>
-              )}
-            </View>
             <Text style={styles.label}>Status:</Text>
             {status ? (
               <Text style={styles.label}>
@@ -128,4 +85,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Status;

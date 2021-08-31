@@ -20,6 +20,7 @@ function IncludePhoto() {
   const [description, setDescription] = useState("");
   const [transferred, setTransferred] = useState(0);
   const [uploading, setUploading] = useState(false);
+  const [topic, setTopic] = useState("");
 
   const { navigate } = useNavigation();
   const user = firebase.auth().currentUser;
@@ -35,6 +36,7 @@ function IncludePhoto() {
           name: name,
           description: description,
           itemImg: imageURL,
+          topic: topic,
         })
         .then(() => {
           Alert.alert("Adicionado", "Item adicionado com sucesso.", [
@@ -47,6 +49,7 @@ function IncludePhoto() {
           setName("");
           setDescription("");
           setImage("");
+          setTopic("");
         })
         .catch(() => {
           console.log("Algo deu errado!");
@@ -137,6 +140,12 @@ function IncludePhoto() {
             style={[styles.input]}
             value={description}
             onChangeText={(text) => setDescription(text)}
+          />
+           <Text style={styles.label}>Tópico</Text>
+          <TextInput
+            style={[styles.input]}
+            value={topic}
+            onChangeText={(text) => setTopic(text)}
           />
           <Text style={styles.label}>Image</Text>
           <View style={styles.uploadedImageContainer}>

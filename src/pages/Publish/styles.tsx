@@ -6,9 +6,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#223a57",
   },
   subContainer: {
-    padding: 30,
+    padding: 20,
     justifyContent: "center",
     alignItems: "center",
+  },
+  msgTopic: {
+    paddingBottom: 0,
+    marginTop: 40,
   },
   wrapperContainer: {
     flexDirection: "row",
@@ -20,6 +24,9 @@ const styles = StyleSheet.create({
     color: "#000",
     marginHorizontal: 20,
   },
+  containerButton: {
+    alignItems: "center",
+  },
   info: {
     fontSize: 22,
     marginTop: 20,
@@ -30,10 +37,16 @@ const styles = StyleSheet.create({
     borderColor: "#fff",
     borderRadius: 9,
     height: 56,
-    paddingVertical: 18,
+    paddingVertical: 15,
     paddingHorizontal: 24,
     marginBottom: 16,
-    width: 300,
+    width: 250,
+  },
+  label: {
+    color: "#fff",
+    marginBottom: 15,
+    fontSize: 15,
+    fontWeight: "bold",
   },
   photo: {
     width: 64,
@@ -51,6 +64,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 10,
   },
+
   buttonText: {
     color: "#fff",
     fontSize: 16,
@@ -59,6 +73,9 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     color: "#fff",
     fontSize: 16,
+  },
+  sendMsg: {
+    paddingVertical: 30,
   },
 });
 

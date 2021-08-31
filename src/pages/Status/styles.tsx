@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#223a57",
   },
-  containerAdd: { alignItems: "center" },
+  containerAdd: { alignItems: "center", marginTop: 30 },
   title: {
     color: "#fff",
     fontWeight: "bold",
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
   label: {
     color: "#fff",
-    marginBottom: 5,
+    marginBottom: 8,
     fontSize: 15,
     fontWeight: "bold",
   },
@@ -29,59 +29,80 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: "#fff",
     borderWidth: 1.4,
-    borderColor: "#dcdc",
+    borderColor: "#fff",
     borderRadius: 9,
     height: 56,
-    paddingVertical: 15,
+    paddingVertical: 18,
     paddingHorizontal: 24,
-    marginBottom: 14,
+    marginBottom: 16,
     width: 300,
   },
+
+  inputPort: {
+    backgroundColor: "#fff",
+    borderWidth: 1.4,
+    borderColor: "#fff",
+    borderRadius: 9,
+    height: 56,
+    paddingVertical: 18,
+    paddingHorizontal: 24,
+    marginBottom: 16,
+    width: 150,
+  },
+
   profile: {
     paddingTop: 0,
   },
   containerButton: {
+    justifyContent: "center",
     alignItems: "center",
   },
 
-  textButtonImage: {
-    fontFamily: "Roboto-Regular",
-    fontSize: 16,
-    color: "#fff",
-    textDecorationLine: "underline",
+  clearSession: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
+
+  buttonClear: {
+    backgroundColor: "#fff",
+    borderRadius: 9,
+    width: 100,
+    height: 55,
+    alignItems: "center",
+  },
+
   button: {
     backgroundColor: "#082130",
     borderRadius: 9,
-    width: "70%",
+    width: "40%",
+    padding: 20,
+    alignItems: "center",
+    fontWeight: "bold",
+    marginTop: 40,
+  },
+
+  buttonDesc: {
+    backgroundColor: "#cf0e0e",
+    borderRadius: 9,
+    width: "50%",
     padding: 20,
     alignItems: "center",
     fontSize: 20,
     fontWeight: "bold",
-    marginTop: 20,
+    marginTop: 40,
   },
-  buttonImage: {
-    backgroundColor: "#082130",
-    borderRadius: 9,
-    width: "55%",
-    padding: 20,
-    alignItems: "center",
-    fontSize: 15,
-    fontWeight: "bold",
-    marginTop: 10,
-  },
+
   buttonText: {
     color: "#fff",
     fontSize: 16,
   },
 
-  uploadedImageContainer: { alignItems: "center" },
-
-  uploadedImage: {
-    width: 70,
-    height: 70,
-    borderRadius: 9,
+  buttonTextClear: {
+    color: "#000",
+    fontSize: 16,
+    alignItems: "center",
   },
+
   itemList: {
     marginTop: 10,
   },
@@ -90,9 +111,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
   },
-  textTransferred: {
-    fontSize: 12,
-    color: "#030303",
+  sendMsg: {
+    paddingVertical: 350,
   },
 });
 

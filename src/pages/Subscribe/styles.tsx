@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#223a57",
   },
+  containerButton: { alignItems: "center", marginTop: 30 },
   subContainer: {
     padding: 30,
     justifyContent: "center",
@@ -31,6 +32,18 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     height: 56,
     paddingVertical: 18,
+    paddingHorizontal: 24,
+    marginBottom: 16,
+    width: 300,
+  },
+
+  inputMen: {
+    backgroundColor: "#fff",
+    borderWidth: 1.4,
+    borderColor: "#fff",
+    borderRadius: 9,
+    height: 56,
+    paddingVertical: 80,
     paddingHorizontal: 24,
     marginBottom: 16,
     width: 300,
@@ -65,6 +78,9 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     fontSize: 15,
     fontWeight: "bold",
+  },
+  sendMsg: {
+    paddingVertical: 30,
   },
 });
 

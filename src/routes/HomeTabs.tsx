@@ -6,6 +6,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import ItemList from "../pages/ItemLIst";
 import Profile from "../pages/Profile";
 import IncludePhoto from "../pages/IncludePhoto";
+import Status from "../pages/Status";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -73,6 +74,22 @@ function HomeTabs() {
             return (
               <FontAwesome
                 name="connectdevelop"
+                size={30}
+                color={focused ? "#072333" : "#748c94"}
+              />
+            );
+          },
+        }}
+      />
+      <Screen
+        name="Status"
+        component={Status}
+        options={{
+          tabBarLabel: "",
+          tabBarIcon: ({ focused }) => {
+            return (
+              <FontAwesome
+                name="info"
                 size={30}
                 color={focused ? "#072333" : "#748c94"}
               />
