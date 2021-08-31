@@ -4,8 +4,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#223a57",
+    width: "100%",
   },
-  containerButton: { alignItems: "center", marginTop: 30 },
+  containerButton: { alignItems: "center" },
   subContainer: {
     padding: 30,
     justifyContent: "center",
@@ -14,6 +15,12 @@ const styles = StyleSheet.create({
   wrapperContainer: {
     flexDirection: "row",
     alignItems: "flex-start",
+  },
+  containerMsg: {
+    backgroundColor: "#fff",
+    borderWidth: 1.4,
+    borderColor: "#fff",
+    borderRadius: 9,
   },
   title: {
     fontSize: 36,
@@ -78,6 +85,28 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     fontSize: 15,
     fontWeight: "bold",
+  },
+  buttonClear: {
+    backgroundColor: "#EEAD2D",
+    borderRadius: 9,
+    width: 100,
+    padding: 20,
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
+  msg: {
+    color: "#000",
+    marginBottom: 8,
+    padding: 5,
+    fontSize: 15,
+    fontWeight: "bold",
+    textShadowColor: "rgba(0, 0, 0, 0.5)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 5,
+    borderBottomWidth: 0.8,
+    borderBottomColor: "#cbcbcb",
   },
   sendMsg: {
     paddingVertical: 30,

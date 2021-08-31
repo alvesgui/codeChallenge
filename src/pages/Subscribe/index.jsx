@@ -1,7 +1,7 @@
 import React, {useState}from "react";
 
 import {Text, View, TextInput, Picker,AsyncStorage} from 'react-native'
-import { RectButton } from "react-native-gesture-handler";
+import { RectButton, ScrollView } from "react-native-gesture-handler";
 
 import RNPickerSelect from 'react-native-picker-select';
 import InfoHeader from '../../components/InfoHeader'
@@ -95,17 +95,23 @@ function Subscribe() {
               </RectButton>
             </View>
           </View>
+          
           <View style={styles.sendMsg}>
             <Text style={styles.label}>{`Mensagens recebidas no tópico: ${topic} `}</Text>
-            <TextInput
-              style={styles.inputMen}
-              onChangeText={onChangeText}
-              value={text}
-            />
-              {brokerText && brokerText.map((txt, i) => <Text key={i}>{txt}</Text>)}  
+             
+              <View style={styles.containerMsg}>
+                {brokerText && brokerText.map((txt, i) => <Text style={styles.msg} key={i}>{txt}</Text>)} 
+              </View>     
           </View>
+          <RectButton
+            onPress={() => setBrokerText([])}
+            style={styles.buttonClear}
+  > 
+              <Text style={styles.buttonText}>Limpar</Text>
+          </RectButton>
         </View>
       </View>
+    
     )
 }
 

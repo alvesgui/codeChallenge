@@ -1,7 +1,7 @@
 import React, {useState}from "react";
 
 import {Text, View, TextInput, Picker,AsyncStorage} from 'react-native'
-import { RectButton } from "react-native-gesture-handler";
+import { RectButton, ScrollView } from "react-native-gesture-handler";
 
 import RNPickerSelect from 'react-native-picker-select';
 import InfoHeader from '../../components/InfoHeader'
@@ -21,20 +21,6 @@ init({
 })
 
 
-const sports = [
-  {
-    label: 'Football',
-    value: 'football',
-  },
-  {
-    label: 'Baseball',
-    value: 'baseball',
-  },
-  {
-    label: 'Hockey',
-    value: 'hockey',
-  },
-];
 var client, connected = false, topic = 'SensorTemp'
 
 function Publish() {
@@ -71,10 +57,12 @@ function Publish() {
     }
   
     const [text, onChangeText] = React.useState('')
+    const [textTopic, onChanheTextTopic] = React.useState('')
     const [brokerText, setBrokerText] = React.useState([])
 
 
     return (
+      <ScrollView>
       <View style={styles.container}>
         <InfoHeader title="Publish" />
         <View style={styles.subContainer}>   
@@ -84,8 +72,8 @@ function Publish() {
           <Text style={styles.label}>Tópico:</Text>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value={text}
+            onChangeText={onChanheTextTopic}
+            value={textTopic}
           />
           <Text style={styles.label}>Mensagem:</Text>
           <TextInput
@@ -115,11 +103,21 @@ function Publish() {
           </View>
           </View>
           <View style={styles.sendMsg}>
-            <Text style={styles.buttonText}>{`Mensagens enviadas no tópico ${topic}: `}</Text>
-            {brokerText && brokerText.map((txt, i) => <Text key={i}>{txt}</Text>)}  
+            <Text style={styles.label}>{`Histórico de msgs enviadas no tópico ${topic}: `}</Text>
+            <View style={styles.containerMsg}>
+              {brokerText && brokerText.map((txt, i) => <Text style={styles.msg} key={i}>{txt}</Text>)} 
+            </View> 
+            
           </View>
+          <RectButton
+            onPress={() => setBrokerText([])}
+            style={styles.buttonClear}
+  > 
+              <Text style={styles.buttonText}>Limpar</Text>
+          </RectButton>
         </View>
       </View>
+      </ScrollView>
     )
 }
 
