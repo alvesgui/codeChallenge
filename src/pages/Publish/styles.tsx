@@ -64,6 +64,16 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 10,
   },
+  buttonHist: {
+    backgroundColor: "#fff",
+    borderRadius: 9,
+    width: "70%",
+    padding: 20,
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
   buttonClear: {
     backgroundColor: "#EEAD2D",
     borderRadius: 9,
@@ -78,6 +88,10 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 16,
+  },
+  buttonTextHist: {
+    color: "#000",
+    fontSize: 14,
   },
   text: {
     paddingTop: 60,
@@ -104,6 +118,9 @@ const styles = StyleSheet.create({
     borderWidth: 1.4,
     borderColor: "#fff",
     borderRadius: 9,
+  },
+  scrol: {
+    backgroundColor: "#223a57",
   },
 });
 

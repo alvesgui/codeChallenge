@@ -21,12 +21,17 @@ init({
 })
 
 
-var client, connected = false, topic = 'SensorTemp'
+var client, connected = false, topic2 = 'SensorTemp'
+
+
 
 function Publish() {
 
   const [qos, setQos] = useState("0");
-    function initMqtt() {
+  const [historic, setHistoric] = useState(false)
+  const[topic, setTopic] = useState("sensorTemp")
+    
+  function initMqtt() {
       client = new Paho.MQTT.Client('broker.mqttdashboard.com', 8000, 'user123456')
       client.onConnectionLost = onConnectionLost
       client.onMessageArrived = onMessageArrived
@@ -55,14 +60,17 @@ function Publish() {
       let msg = message.payloadString
       setBrokerText([...brokerText, msg])
     }
+
+
   
     const [text, onChangeText] = React.useState('')
+    const [title, setTitle] = useState("Exibir")
     const [textTopic, onChanheTextTopic] = React.useState('')
     const [brokerText, setBrokerText] = React.useState([])
 
 
     return (
-      <ScrollView>
+      <ScrollView style={styles.scrol}>
       <View style={styles.container}>
         <InfoHeader title="Publish" />
         <View style={styles.subContainer}>   
@@ -72,8 +80,8 @@ function Publish() {
           <Text style={styles.label}>Tópico:</Text>
           <TextInput
             style={styles.input}
-            onChangeText={onChanheTextTopic}
-            value={textTopic}
+            onChangeText={setTopic}
+            value={topic}
           />
           <Text style={styles.label}>Mensagem:</Text>
           <TextInput
@@ -94,7 +102,7 @@ function Publish() {
         <Picker.Item label="2" value="2" />
       </Picker>
 
-           <View style={styles.containerButton}>
+        <View style={styles.containerButton}>
           <RectButton
             onPress={() => sendMessage(text, topic)}
             style={styles.button}> 
@@ -102,19 +110,24 @@ function Publish() {
           </RectButton>
           </View>
           </View>
-          <View style={styles.sendMsg}>
-            <Text style={styles.label}>{`Histórico de msgs enviadas no tópico ${topic}: `}</Text>
-            <View style={styles.containerMsg}>
-              {brokerText && brokerText.map((txt, i) => <Text style={styles.msg} key={i}>{txt}</Text>)} 
-            </View> 
-            
-          </View>
           <RectButton
-            onPress={() => setBrokerText([])}
-            style={styles.buttonClear}
-  > 
-              <Text style={styles.buttonText}>Limpar</Text>
+            onPress={() => setHistoric(!historic)}
+            style={styles.buttonHist}> 
+              <Text style={styles.buttonTextHist}>{title} Histórico</Text>
           </RectButton>
+          {historic ?   <><View style={styles.sendMsg}>
+              <Text style={styles.label}>{`Histórico de msgs enviadas no tópico ${topic}: `}</Text>
+              <View style={styles.containerMsg}>
+                {brokerText && brokerText.map((txt, i) => <Text style={styles.msg} key={i}>{txt}</Text>)}
+              </View>
+
+            </View><RectButton
+              onPress={() => setBrokerText([])}
+              style={styles.buttonClear}
+            >
+                <Text style={styles.buttonText}>Limpar</Text>
+              </RectButton></> : <View/>  }
+         
         </View>
       </View>
       </ScrollView>

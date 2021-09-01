@@ -10,6 +10,7 @@ interface User {
   name?: string;
   email?: string;
   password?: string;
+  passwordConfirm?: string;
 }
 
 function Signup() {
@@ -17,9 +18,10 @@ function Signup() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
 
   function handleCreateUser() {
-    if (email && password) {
+    if (email && password && password === passwordConfirm) {
       auth()
         .createUserWithEmailAndPassword(email, password)
         .then(() => {
@@ -30,7 +32,7 @@ function Signup() {
         })
         .catch((error) => {
           if (error.code === "auth/email-already-in-use") {
-            alert("Email já está sendo utilziado!");
+            alert("Email já está sendo utilizado!");
           }
 
           if (error.code === "auth/invalid-email") {
@@ -55,18 +57,26 @@ function Signup() {
 
         <Input
           keyboardType={"email-address"}
-          placeholder={"email@email.com"}
+          placeholder={"Email"}
           placeholderTextColor={"#b5b1b1"}
           value={email}
           onChangeText={(text) => setEmail(text)}
         />
         <Input
           secureTextEntry
-          placeholder={"******"}
+          placeholder={"Senha"}
           placeholderTextColor={"#b5b1b1"}
           maxLength={6}
           value={password}
           onChangeText={(text) => setPassword(text)}
+        />
+        <Input
+          secureTextEntry
+          placeholder={"Confirme senha"}
+          placeholderTextColor={"#b5b1b1"}
+          maxLength={6}
+          value={passwordConfirm}
+          onChangeText={(text) => setPasswordConfirm(text)}
         />
         <RectButton onPress={handleCreateUser} style={styles.button}>
           <Text style={styles.buttonText}>Cadastrar</Text>

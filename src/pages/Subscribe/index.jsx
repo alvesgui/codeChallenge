@@ -26,6 +26,7 @@ var client, connected = false, topic = 'SensorTemp'
 function Subscribe() {
 
   const [qos, setQos] = useState("0");
+  const [topic, setTopic] = useState("sensorTemp2")
     function initMqtt() {
       client = new Paho.MQTT.Client('broker.mqttdashboard.com', 8000, 'user123456')
       client.onConnectionLost = onConnectionLost
@@ -61,6 +62,7 @@ function Subscribe() {
 
 
     return (
+      <ScrollView style={styles.scrol}>
       <View style={styles.container}>
         <InfoHeader title="Subscribe" />
         <View style={styles.subContainer}>   
@@ -70,8 +72,8 @@ function Subscribe() {
             <Text style={styles.label}>Tópico:</Text>
             <TextInput
               style={styles.input}
-              onChangeText={onChangeText}
-              value={text}
+              onChangeText={setTopic}
+              value={topic}
             />
           
            <Text style={styles.label}>QOS:</Text>
@@ -111,6 +113,7 @@ function Subscribe() {
           </RectButton>
         </View>
       </View>
+      </ScrollView>
     
     )
 }

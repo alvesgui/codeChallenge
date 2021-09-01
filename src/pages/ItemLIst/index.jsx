@@ -45,6 +45,7 @@ function ItemList() {
     fetchItems();
   }, [items]);
 
+
   return (
     <View style={styles.container}>
       <Header title="Seus Objetos" />

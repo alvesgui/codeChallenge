@@ -111,6 +111,9 @@ const styles = StyleSheet.create({
   sendMsg: {
     paddingVertical: 30,
   },
+  scrol: {
+    backgroundColor: "#223a57",
+  },
 });
 
 export default styles;

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -63,6 +63,11 @@ function Login() {
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
+        <View style={styles.viewContainer}>
+          <Text onPress={handleNavigateToSignup} style={styles.textPassword}>
+            Esqueci minha senha
+          </Text>
+        </View>
 
         <RectButton onPress={handleNavigateToHomeTabs} style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text>
@@ -96,6 +101,12 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
   },
+  textPassword: {
+    paddingRight: 190,
+    paddingBottom: 20,
+    color: "#fff",
+    fontSize: 14,
+  },
   title: {
     fontSize: 24,
     paddingBottom: 20,
@@ -108,6 +119,10 @@ const styles = StyleSheet.create({
     textShadowColor: "rgba(0, 0, 0, 0.75)",
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10,
+  },
+  viewContainer: {
+    alignItems: "flex-start",
+    paddingBottom: 20,
   },
 });
 
